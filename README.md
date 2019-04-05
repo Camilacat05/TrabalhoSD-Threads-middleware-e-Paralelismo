@@ -1,0 +1,1 @@
+# TrabalhoSD-Threads-middleware-e-Paralelismo
