@@ -5,12 +5,18 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post('/servidor2', (req, res) => {
+app.post('/servidor3', (req, res) => {
     let palavra = req.body.palavra;
-    palavra = palavra.toUpperCase(); // converte para maiúscula
-    res.send({ palavra: palavra });
+    let palavraResult = '';
+    let concat = palavra.split(" ");
+    concat.forEach((element, index) => {
+        palavraResult +=element;
+        if(index == concat.length - 1) {
+            res.send({ palavra: palavraResult });
+        }
+    });
 });
 
-app.listen(3001, () => {
+app.listen(3002, () => {
     console.log("Servidor online!");
 });
